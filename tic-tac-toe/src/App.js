@@ -81,24 +81,28 @@ const App = () => {
   }
 
   return (
-    <Container className="p-5">
+    <Container className="main-container p-5">
       <ToastContainer position="bottom-center" />
       <Row>
         <Col md={6} className="offset-md-3">
+          <div className="main-heading text-uppercase text-center text-">
+            <h1>Tic-Tac-Toe</h1>
+          </div>
           {winMessage ? (
-            <div className="mb-2 mt-2">
+            <div className="turn-win mb-2 mt-2">
               <h1 className="text-success text-uppercase text-center">
                 {winMessage}
               </h1>
               <Button 
                 color="success"
+                id = "reload-button"
                 block
                 onClick={reloadGame}>
                   RELAOD GAME
                 </Button>
             </div>
           ) : (
-            <h1 className="text-center text-warning">
+            <h1 className="turn-win text-center text-warning">
               {isCross ? "Cross" : "Circle"}'s turn.
             </h1>
           ) }
